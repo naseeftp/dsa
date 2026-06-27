@@ -47,6 +47,14 @@ class Queue{
     size() {
         return this.stack1.length + this.stack2.length;
     }
+
+     print(){
+        const queue=[
+             ...this.stack2.slice().reverse(),
+             ...this.stack1
+            ]
+            console.log(queue.join('->'))
+    }
     
 
 }
