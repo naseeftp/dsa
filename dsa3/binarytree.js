@@ -147,6 +147,24 @@ class Tree{
        count+=this.countleft(node.right,false)
        return count
    }
+     findMin(){
+            if(!this.root) return null;
+            let min=this.root.value;
+            let queue=[this.root];
+            while(queue.length){
+                let node=queue.shift();
+                if(node.value<min){
+                    min=node.value
+                }
+                if(node.left){
+                    queue.push(node.left)
+                }
+                if(node.right){
+                    queue.push(node.right)
+                }
+            }
+            return min
+        }
 }
 
 let t=new Tree()
