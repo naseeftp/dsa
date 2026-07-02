@@ -27,7 +27,18 @@ class stack{
     {
         return this.items.length
     }
-    
+    deleteMiddle(){
+        let k=Math.floor(this.items.length/2)
+        let temp=[];
+        while(k>0){
+            temp.push(this.items.pop())
+            k--
+        }
+        this.items.pop();
+        while(temp.length){
+            this.items.push(temp.pop())
+        }
+    }
   print() {
         if (this.isEmpty()) {
             console.log("Stack is empty");
